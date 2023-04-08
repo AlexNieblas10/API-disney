@@ -1,0 +1,63 @@
+main {
+  width: 100%;
+  margin-top: 40px;
+}
+
+#allCharactersButtonContainer {
+  display: grid;
+  place-items: center;
+  height: 60%;
+}
+
+#allCharactersButtonContainer button {
+  margin-top: 40px;
+}
+
+
+.mainContainer {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  text-align: center;
+  row-gap: 30px;
+}
+
+
+.character {
+  width: 100%;
+}
+
+.imageContainer {
+  display: flex;
+  margin: 0;
+  width: 100%;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.imageContainer img {
+  object-fit: cover;
+}
+
+.character h3 {
+  margin: 0;
+}
+
+.character ul {
+  list-style: none;
+  padding: 0;
+}
+
+.verMas {
+  margin-top: 10px;
+}
+
+@media (min-width: 450px) {
+  .character {
+    width: 40%;
+  }
+
+}

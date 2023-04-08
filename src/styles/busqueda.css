@@ -1,0 +1,62 @@
+.busqueda {
+  width: 100%;
+}
+
+.buscarPersonajeMain {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 30%;
+  box-sizing: border-box;
+}
+
+.buscarPersonajeMain form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+}
+
+.buscarPersonajeMain form input {
+  width: 40%;
+  border-radius: 4px;
+  border: none;
+  outline: none;
+  transition: all 1s;
+}
+
+
+
+.buscarPersonajeMain form input:focus {
+  width: 60%;
+
+}
+
+.mainContainerBusqueda {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  text-align: center;
+  gap: 10px;
+}
+
+.imageContainer {
+  display: grid;
+  width: 100%;
+  height: 400px;
+  place-items: center;
+}
+
+.imageContainer img {
+  object-fit: cover;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+@media (min-width: 450px) {
+  .busqueda {
+    width: 40%;
+  }
+
+}
