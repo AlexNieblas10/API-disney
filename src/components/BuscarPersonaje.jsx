@@ -5,10 +5,7 @@ import "../styles/busqueda.css";
 export function BuscarPersonaje() {
   const {
     personaje,
-    setPersonaje,
     setApiPersonaje,
-    setPersonajes,
-    setPagina,
     apiPersonaje,
     setInfoModal,
     setModal,
@@ -16,14 +13,6 @@ export function BuscarPersonaje() {
   } = useContext(FullContext);
 
   let APICharacter = `https://api.disneyapi.dev/character?name=${personaje}`;
-
-  const submitBusqueda = (e) => {
-    e.preventDefault();
-    setPersonaje(e.target[0].value);
-    setPersonajes(false);
-    setPagina(1);
-    e.target[0].value = ''
-  };
 
   useEffect(() => {
     if (personaje !== null && personaje !== false) {
@@ -35,19 +24,7 @@ export function BuscarPersonaje() {
 
   return (
     <>
-      <section className="buscarPersonajeMain">
-        <h1>Bienvenido a Disney character</h1>
-        <form action="" onSubmit={submitBusqueda}>
-          <label htmlFor="buscarPersonaje">
-            Aqui puedes buscar a tu personaje:
-          </label>
-          <input type="text" id="buscarPersonaje" placeholder="Mickey Mouse" />
-
-          <button>Buscar</button>
-        </form>
-      </section>
-
-      {apiPersonaje !== null && personaje !== false && (
+      {apiPersonaje !== null && personaje !== false && apiPersonaje?.info?.count > 1 && (
         <section className="mainContainerBusqueda">
           {apiPersonaje.data.map((busqueda) => (
             <article key={busqueda._id} className="busqueda">

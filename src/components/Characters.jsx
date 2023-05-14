@@ -13,10 +13,9 @@ export const Characters = () => {
     setInfoModal,
     setModal,
     modal,
-    personaje
   } = useContext(FullContext);
 
-  let API = `https://api.disneyapi.dev/characters?page=${pagina}`;
+  let API = `https://api.disneyapi.dev/character?page=${pagina}`;
 
   useEffect(() => {
     fetch(API)
@@ -24,6 +23,7 @@ export const Characters = () => {
       .then((data) => setApiResponse(data));
   }, [pagina]);
 
+  console.log(apiResponse);
 
   return (
     <main>
@@ -32,8 +32,7 @@ export const Characters = () => {
           <button
             onClick={() => {
               setPersonajes(true);
-              setPersonaje(false)
-              
+              setPersonaje(false);
             }}
           >
             Ver todos los personajes
@@ -41,7 +40,7 @@ export const Characters = () => {
         )}
       </section>
 
-      {apiResponse && personajes && (
+      {apiResponse?.info?.count > 1 && personajes && (
         <section className="mainContainer">
           {apiResponse.data.map((character) => {
             return (
